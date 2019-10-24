@@ -23,14 +23,14 @@
 							<% include ./partials/messages %>
 							<div class="info-form">
 								<form action="/users/register" class="form-inlin justify-content-center " method="POST">
-									<div class="form-group" id="email">
+									<div class="form-group" id="email2">
 										<label class="sr-only">Email</label>
-										<input type="text" id="email2" class="form-control" name="email" placeholder="EMAIL" value="<%= typeof email != 'undefined' ? email : '' %>">
+										<input type="email" id="email" class="form-control" name="email" placeholder="EMAIL" value="<%= typeof email != 'undefined' ? email : '' %>">
 									</div>
 									<br>
 									<div class="form-group">
 										<label class="sr-only">Password</label>
-										<input type="text" id="password" name="password" class="form-control" placeholder="PASSWORD" value="<%= typeof  name!= 'undefined' ? password : '' %>">
+										<input type="password" id="password" name="password" class="form-control" placeholder="PASSWORD" value="<%= typeof  name!= 'undefined' ? password : '' %>">
 									</div>
 									<br>
 									<br>

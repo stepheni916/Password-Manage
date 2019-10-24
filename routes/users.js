@@ -5,10 +5,11 @@ const passport = require('passport');
 
 //user MODEL
 const User = require('../models/User')
+const { forwardAuthenticated } = require('../config/auth');
 
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
-router.get('/register', (req, res) => res.render('register'));
+router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 // Register Handle
 router.post('/register', (req, res) => {
@@ -25,7 +26,7 @@ router.post('/register', (req, res) => {
             errors,
             email,
             password
-        })
+        });
     } else {
         //Validation passed
         User.findOne({ email: email })
@@ -44,22 +45,26 @@ router.post('/register', (req, res) => {
                     });
 
                     // Hash Password
-                    bcrypt.genSalt(10, (err, salt) => 
+                    bcrypt.genSalt(10, (err, salt) =>  {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if(err) throw err;
                             // Set password to hashed
                             newUser.password = hash;
                             // Save user
-                            newUser.save()
+                            newUser
+                                .save()
                                 .then(user => {
-                                    req.flash('success_msg', 'You are now registered');
+                                    req.flash(
+                                        'success_msg', 
+                                        'You are now registered'
+                                    );
                                     res.redirect('/users/login');
                                 })
                                 .catch(err => console.log(err));
-
-                    }))
+                        });
+                    });
                 }
-            })
+            });
     }
 
 });
@@ -75,7 +80,7 @@ router.post('/login', (req, res, next) => {
 });
 
 //Logout handle
-router.get ('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
