@@ -24,12 +24,14 @@ body{
 }
 
 .navbar {
+  position: relative;
+  right:220px;
   border-bottom: 2px solid rgb(255, 255, 255);
   border-radius: 20px;
   padding: 0px;
-  width: 100%;
+  width: 140%;
   height: 50px;
-  padding-left: 30px;
+  padding-left: 650px;
   padding-right: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -54,7 +56,17 @@ input[type="text"], textarea {
 #signInBtn {
   border-radius: 30px;
   background-color : #000000; 
-  border: 2px solid #00b837;
+  border: 2px solid  #0044ff;
+  text-align: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+#signInBtnLOG {
+  border-radius: 30px;
+  background-color : #000000; 
+  border: 2px solid purple;
   text-align: center;
   color: white;
   padding-left: 20px;
@@ -65,11 +77,13 @@ input[type="text"], textarea {
 #signUpBtn {
   border-radius: 30px;
   background-color : #000000; 
-  border: 2px solid #dd0000;
+  border: 2px solid hotpink;
   text-align: center;
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
+  right: 0px;
 }
 
 .divider {
@@ -172,7 +186,38 @@ input[type="text"], textarea {
   color: black;
 }
 
-#Email2 {
+#email {
     color: white;
     background-color: black;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#logout {
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(83, 168, 238);
+  color: white;
+  position: absolute;
+  right: 240px;
+  top:80px;
+}
+
+#signUpBtnENT {
+  border-radius: 30px;
+  background-color : #000000; 
+  border: 2px solid #0044ff;
+  text-align: center;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  right: 0px;
+}
+
+#password {
+  color: white;
+  background-color: black;
+  border-radius: 30px;
+  text-align: center;
 }

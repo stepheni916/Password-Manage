@@ -5,9 +5,9 @@
 <body>
 	</script>
 	<nav class="navbar stciky-top navbar-dark bg-black">
-		<a class="navbar-brand" href="#">INFORMATION MANAGER</a>
+		<a class="navbar-brand" style="color: white" href="#">INFORMATION MANAGER</a>
 		<div class="divider2"></div>
-		<button class="btn" id="btn2"></button>
+		<!--<button class="btn" id="btn2"></button>-->
 	</nav>
 	<br>
 	<br>
@@ -17,7 +17,7 @@
 				<div id="container" class="container">
 					<div class="row text-white">
 						<div class="col-sm-6 offset-sm-3 text-center">
-							<h1 class="display-4">REGISTER</h1>
+							<h1 class="display-4" style="color:hotpink">REGISTER</h1>
 							<br>
 							<br>
 							<% include ./partials/messages %>
@@ -34,14 +34,15 @@
 									</div>
 									<br>
 									<br>
-									
-									<button type="submit" class="btn" id="signUpBtn" style="font-size: 20px">SIGN UP</button></a>
-									
-									<div class="divider"></div>
-									
-									<button type="submit" name="name" class="btn" id="signInBtn" value="<%= typeof  name!= 'undefined' ? name : '' %>" style="font-size: 20px">LOGIN</button>
+									<button type="submit" class="btn" id="signUpBtnENT" value="<%= typeof  name!= 'undefined' ? name : '' %>" style="font-size: 20px">ENTER</button>
 									
 								</form>
+									
+								
+								<br>
+								<a href="/users/login">
+									<button type="submit" name="name" class="btn" id="signInBtnLOG" style="font-size: 20px">LOGIN</button>
+								</a>
 							</div>
 							<br>
 						</div>
