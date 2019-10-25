@@ -25,19 +25,28 @@
 								<form action="/users/login" class="form-inlin justify-content-center " method="POST">
 									<div class="form-group" id="email2">
 										<label class="sr-only">Email</label>
-										<input type="email" id="email" class="form-control" placeholder="EMAIL">
+										<input 
+											type="email" 
+											id="email" 
+											name="email"
+											class="form-control" 
+											placeholder="EMAIL"
+										/>
 									</div>
 									<br>
 									<div class="form-group">
 										<label class="sr-only">Password</label>
-										<input type="password" id="password" class="form-control" placeholder="PASSWORD">
+										<input type="password" id="password" name="password" class="form-control" placeholder="PASSWORD">
 									</div>
 									<br>
 									<br>
 									<button type="submit" class="btn" id="signInBtn" style="font-size: 20px">LOGIN</button>
-									<div class="divider"></div>
-									<button type="submit" class="btn" id="signUpBtn" style="font-size: 20px">REGISTER</button></a>
+									
 								</form>
+								<div class="divider"></div>
+								<a href="/users/register">
+									<button class="btn" id="signUpBtn" style="font-size: 20px">REGISTER</button>
+								</a>
 							</div>
 							<br>
 						</div>
